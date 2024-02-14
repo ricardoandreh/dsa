@@ -39,17 +39,18 @@ def knuth_morris_pratt(t, p):
   return -1
 
 
-# Test 1
-text = "abxabcabcaby"
-pattern = "abcaby"
+def test():
+  # Test Temp Array Pattern
+  assert get_arr_pattern("abcdabca") == [0, 0, 0, 0, 1, 2, 3, 1]
+  assert get_arr_pattern("aabaabaaa") == [0, 1, 0, 1, 2, 3, 4, 5, 2]
+  assert get_arr_pattern("acacabacacabacacac") == [0, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 4]
+  
+  # Test KMP Algorithm
+  assert knuth_morris_pratt("abxabcabcaby", "abcaby") == 6
+  assert knuth_morris_pratt("abcbcglx", "bcgl") == 3
+  assert knuth_morris_pratt("aaaaaaab", "aaab") == 4
 
-# Test 2
-# text = "abcbcglx"
-# pattern = "bcgl"
 
-print(knuth_morris_pratt(text, pattern))
-
-# Test Array Pattern
-# pattern = "abcdabca"
-# pattern = "aabaabaaa"
-# print(get_arr_pattern(pattern))
+if __name__ == "__main__":
+  test()
+  print("Everything's OKAY")
