@@ -1,5 +1,3 @@
-# KMP Substring Search
-
 def get_arr_pattern(p):
   arr = [0]
   p_length = len(p)
